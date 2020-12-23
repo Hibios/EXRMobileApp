@@ -24,9 +24,11 @@ public class ApplicationClass extends Application {
     }
 
     private static boolean activityVisible;
+    public static boolean isNightModeOn;
     public static Bitmap QR_IMAGE;
 
-    public static Bitmap generateQRCodeImage(String barcodeText) throws WriterException {
+
+    public static void generateQRCodeImage(String barcodeText) throws WriterException {
         QRCodeWriter barcodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix =
                 barcodeWriter.encode(barcodeText, BarcodeFormat.QR_CODE, 1024, 1024);
@@ -41,6 +43,5 @@ public class ApplicationClass extends Application {
         }
 
         QR_IMAGE = bmp;
-        return bmp;
     }
 }

@@ -33,4 +33,5 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.zxing:core:3.4.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
 }

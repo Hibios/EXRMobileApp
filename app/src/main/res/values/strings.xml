@@ -10,4 +10,7 @@
     <string name="user_name">Rick Astley</string>
     <string name="mountains">Mountain</string>
     <string name="desc_prop">Тут находится длинное описание организации</string>
+    <string name="mode_hint">Night mode</string>
+    <string name="way">Маршрут</string>
+    <string name="go">В путь</string>
 </resources>

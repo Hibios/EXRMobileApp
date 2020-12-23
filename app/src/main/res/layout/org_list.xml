@@ -4,19 +4,20 @@
     android:id="@+id/OrgListLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackground"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/main_toolbar"
         style="@style/Toolbar"
         android:layout_width="match_parent"
-        android:background="#E36125"
-        app:title="Организации" />
+        app:title="Карта" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOrganizations"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/mainBackground"
         android:clipToPadding="false"
         android:paddingTop="3dp"
         android:paddingBottom="3dp" />

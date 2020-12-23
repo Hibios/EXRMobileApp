@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home_action"
-        app:showAsAction="always"
         android:icon="@drawable/round_home_white_24"
-        android:title="@string/home_hint"/>
+        android:title="@string/home_hint"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mode_action"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/round_dark_mode_white_24"
+        android:title="@string/mode_hint"/>
 </menu>

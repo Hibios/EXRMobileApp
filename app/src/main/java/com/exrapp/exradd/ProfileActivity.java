@@ -1,10 +1,14 @@
 package com.exrapp.exradd;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +20,8 @@ import com.google.zxing.WriterException;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    SharedPreferences appSettingPrefs;
+    SharedPreferences.Editor sharedPrefsEdit;
 
     @Override
     protected void onResume() {
@@ -29,10 +35,22 @@ public class ProfileActivity extends AppCompatActivity {
         ApplicationClass.activityPaused();
     }
 
+    @SuppressLint({"ResourceAsColor", "CommitPrefEdits"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+
+        appSettingPrefs = getSharedPreferences("AppSettingPrefs", 0);
+        sharedPrefsEdit = appSettingPrefs.edit();
+        ApplicationClass.isNightModeOn = appSettingPrefs.getBoolean("NightMode", false);
+
+        if (ApplicationClass.isNightModeOn) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         Toolbar main_toolbar = findViewById(R.id.main_toolbar);
         main_toolbar.setTitle("Профиль");
         setSupportActionBar(main_toolbar);
@@ -66,8 +84,19 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.home_action && !ApplicationClass.isActivityVisible()) {
+            Log.i("mode", "Home button pressed!");
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
+        }
+        else if (item.getItemId() == R.id.mode_action) {
+            if (ApplicationClass.isNightModeOn) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                sharedPrefsEdit.putBoolean("NightMode", false);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                sharedPrefsEdit.putBoolean("NightMode", true);
+            }
+            sharedPrefsEdit.apply();
         }
         return true;
     }

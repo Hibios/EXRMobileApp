@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ExrAdd</string>
+    <string name="home_hint">Home</string>
+    <string name="element_text">Hello Recycle</string>
+    <string name="orgz">Организации</string>
+    <string name="qr_code">QR Code</string>
+    <string name="prop">Отсканируйте для авторизации</string>
+    <string name="user_id">ID 87694032034584</string>
+    <string name="user_phone">+79998887766</string>
+    <string name="user_name">Rick Astley</string>
+    <string name="mountains">Mountain</string>
+    <string name="desc_prop">Тут находится длинное описание организации</string>
+    <string name="mode_hint">Night mode</string>
+</resources>

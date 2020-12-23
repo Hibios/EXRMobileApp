@@ -2,5 +2,14 @@
 <resources>
     <color name="colorPrimary">#E36125</color>
     <color name="colorPrimaryDark">#E36125</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#E36125</color>
+
+    <color name="titleText">#FFFFFF</color>
+    <color name="standartText">#1A1A1A</color>
+    <color name="primaryText">#E36125</color>
+    <color name="mainBackground">#FFFFFF</color>
+    <color name="mainCard">#FFFFFF</color>
+    <color name="aroundImage">#FFFFFF</color>
+    <color name="standartButton">#E36125</color>
+    <color name="iconColor">#FFFFFF</color>
 </resources>

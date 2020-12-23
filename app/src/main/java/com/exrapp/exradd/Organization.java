@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Organization {
-    private static Random rand = new Random();
-    private String orgName;
-    private String orgPhone;
-    private String orgID;
+    private static final Random rand = new Random();
+    private final String orgName;
+    private final String orgPhone;
+    private final String orgID;
 
     public Organization(String name, String phone, String ID) {
         orgName = name;

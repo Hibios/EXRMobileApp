@@ -13,7 +13,7 @@ import java.util.List;
 
 public class OrgAdapter extends RecyclerView.Adapter<OrgAdapter.ViewHolder> {
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView orgNameView;
         public TextView orgPhoneView;
         public TextView orgIDView;
@@ -27,7 +27,7 @@ public class OrgAdapter extends RecyclerView.Adapter<OrgAdapter.ViewHolder> {
         }
     }
 
-    private List<Organization> mOrganizations;
+    private final List<Organization> mOrganizations;
 
     public OrgAdapter(List<Organization> organizations) {
         mOrganizations = organizations;
@@ -39,7 +39,7 @@ public class OrgAdapter extends RecyclerView.Adapter<OrgAdapter.ViewHolder> {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View orgView = inflater.inflate(R.layout.card_row_item, parent, false);
+        View orgView = inflater.inflate(R.layout.card_row_item2, parent, false);
 
         return new ViewHolder(orgView);
     }
