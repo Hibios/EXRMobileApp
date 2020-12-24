@@ -18,6 +18,16 @@ import android.widget.ImageView;
 import com.google.zxing.WriterException;
 
 
+/**
+ * The class for displaying the profile page,
+ * almost nothing new happens in it, except for
+ * two methods for understanding the display of activity
+ * and generating curd code when creating the page.
+ *
+ * @author  Ivan Minakov, Kravtsov Stefan, Belousov Viktor, Tolstykh Mikhail
+ * @version 3.0
+ * @since   2020-12-24
+ */
 public class ProfileActivity extends AppCompatActivity {
 
     SharedPreferences appSettingPrefs;
@@ -55,6 +65,8 @@ public class ProfileActivity extends AppCompatActivity {
         main_toolbar.setTitle("Профиль");
         setSupportActionBar(main_toolbar);
 
+        // If the variable does not matter, then the code has not yet been created before,
+        // only in this case we generate the image by the link
         if (ApplicationClass.QR_IMAGE == null) {
             try {
                 ApplicationClass.generateQRCodeImage("https://youtu.be/dQw4w9WgXcQ");

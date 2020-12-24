@@ -9,25 +9,48 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
+/**
+ * The base class of the entire application,
+ * contains some important variables for the application,
+ * as well as a method for timely QR code generation.
+ *
+ * @author  Ivan Minakov, Kravtsov Stefan, Belousov Viktor, Tolstykh Mikhail
+ * @version 3.0
+ * @since   2020-12-24
+ */
 public class ApplicationClass extends Application {
-
+    /**
+     * The method returns the activity state
+     * for understanding whether they are displayed or not
+     * @return State variable
+     */
     public static boolean isActivityVisible() {
         return activityVisible;
     }
 
+    /**
+     * Method changes the activity variable
+     */
     public static void activityResumed() {
         activityVisible = true;
     }
 
+    /**
+     * Method changes the activity variable
+     */
     public static void activityPaused() {
         activityVisible = false;
     }
 
     private static boolean activityVisible;
-    public static boolean isNightModeOn;
+    public static boolean isNightModeOn; // Night mode status
     public static Bitmap QR_IMAGE;
 
-
+    /**
+     * The method generates QR code when the application
+     * is first launched and changes the state of the variable QR_IMAGE
+     * @param barcodeText Link from which the QR code will be generated
+     */
     public static void generateQRCodeImage(String barcodeText) throws WriterException {
         QRCodeWriter barcodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix =

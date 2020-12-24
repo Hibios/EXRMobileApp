@@ -14,6 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
+/**
+ * Organization information page class used
+ * in one upslide widget in another display.
+ *
+ * @author  Ivan Minakov, Kravtsov Stefan, Belousov Viktor, Tolstykh Mikhail
+ * @version 3.0
+ * @since   2020-12-24
+ */
 public class OrgDescriptionActivity extends AppCompatActivity {
 
     SharedPreferences appSettingPrefs;
